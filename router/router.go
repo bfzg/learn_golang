@@ -23,5 +23,12 @@ func Router() *gin.Engine {
 		user.POST("/updata", middlewear.JWY(), service.UpdataUser)
 	}
 
+	//好友关系
+	relation := v1.Group("relation").Use(middlewear.JWY())
+	{
+		relation.POST("/list", service.FriendList)
+		relation.POST("/add", service.AddFriendByName)
+	}
+
 	return router
 }

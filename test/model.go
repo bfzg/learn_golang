@@ -20,4 +20,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	db.AutoMigrate(&models.Relation{})
 }
