@@ -33,5 +33,10 @@ func Router() *gin.Engine {
 		relation.POST("/join_group", service.JoinGroup)
 	}
 
+	upload := v1.Group("upload").Use(middlewear.JWY())
+	{
+		upload.POST("/image", service.Image)
+	}
+
 	return router
 }
