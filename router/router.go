@@ -21,6 +21,7 @@ func Router() *gin.Engine {
 		user.POST("/new", middlewear.JWY(), service.NewUser)
 		user.DELETE("/delete", middlewear.JWY(), service.DeleteUser)
 		user.POST("/updata", middlewear.JWY(), service.UpdataUser)
+		user.GET("/SendUserMsg", middlewear.JWY(), service.SendUserMsg)
 	}
 
 	//关系
