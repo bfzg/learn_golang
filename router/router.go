@@ -39,5 +39,8 @@ func Router() *gin.Engine {
 		upload.POST("/image", service.Image)
 	}
 
+	//聊天记录
+	v1.POST("/user/redisMsg", service.RedisMsg).Use(middlewear.JWY())
+
 	return router
 }
